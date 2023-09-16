@@ -15,12 +15,14 @@ This project aims to generate sketch images from textual descriptions, transform
 - *Scalable*: Supports batch processing for efficient generation of multiple sketches.
 - *User-Friendly*: Simple command-line interface for easy interaction.
 ## Getting Started
-
 Follow these steps to get started with the Text-to-Image Sketch Generation project:
+1-install flutter 
+2-install dart
+3-run main code
 ### Prerequisites
 - Python 3.7+
 - Required Python libraries (specified in `requirements.txt`)
 ### Installation
-
+`pip install diffusers==0.11.1 transformers scipy ftfy accelerate`
 # Sample Output
 !["error on load image"](https://github.com/Hussien12Mostafa/FrontEndNNStory/blob/main/Sample%20Output/Screenshot%202023-09-16%20155129.jpeg)
