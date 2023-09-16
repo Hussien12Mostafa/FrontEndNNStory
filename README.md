@@ -23,4 +23,4 @@ Follow these steps to get started with the Text-to-Image Sketch Generation proje
 ### Installation
 
 # Sample Output
-![Alt Text](Sample Output/Screenshot 2023-09-16 155129.jpeg)
+!["error on load image"]([Sample Output/Screenshot 2023-09-16 155129.jpeg](https://github.com/Hussien12Mostafa/FrontEndNNStory/blob/main/Sample%20Output/Screenshot%202023-09-16%20155129.jpeg)https://github.com/Hussien12Mostafa/FrontEndNNStory/blob/main/Sample%20Output/Screenshot%202023-09-16%20155129.jpeg)
