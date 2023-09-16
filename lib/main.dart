@@ -122,6 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController textEditingController = TextEditingController();
 
   List<String> imagesUrl = [];
+  bool isLoading = false;
   String? highlightedText;
   List<String> splitStringIntoParts(String input) {
     List<String> words = input.split(' ');
@@ -130,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String currentPart = '';
 
     for (int i = 0; i < words.length; i++) {
-      if ((i > 0) && (i % 5 == 0)) {
+      if ((i > 0) && (i % 100 == 0)) {
         parts.add(currentPart.trim());
 
         currentPart = '';
@@ -146,15 +147,33 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _getImageFromAPI() async {
+    imagesUrl.clear();
+    setState(() {
+      isLoading = true;
+    });
     final baseOffset = textEditingController.selection.baseOffset;
     final extentOffset = textEditingController.selection.extentOffset;
     print(baseOffset);
     print(extentOffset);
-    String selectedText = textEditingController.text.substring(
-      extentOffset,
-      baseOffset,
-    );
+    String selectedText='';
+    if (baseOffset > extentOffset) {
+      selectedText = textEditingController.text.substring(
+        extentOffset,
+        baseOffset,
+      );
+    } else {
+      selectedText = textEditingController.text.substring(
+        baseOffset,
+        extentOffset,
+      );
+    }
 
+    if (selectedText.isEmpty) {
+      setState(() {
+        isLoading = false;
+      });
+      return null;
+    }
     List<String> parts = splitStringIntoParts(selectedText);
     print(parts);
     for (int i = 0; i < parts.length; i++) {
@@ -167,7 +186,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     print(imagesUrl.length);
 
-    setState(() {});
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -223,7 +244,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
             ),
             SizedBox(height: 20),
-            ListViewImages(imagesUrl: imagesUrl),
+            Visibility(
+              visible: isLoading,
+              child: CircularProgressIndicator(),
+            ),
+            SingleChildScrollView(child: ListViewImages(imagesUrl: imagesUrl)),
           ],
         ),
       ),
