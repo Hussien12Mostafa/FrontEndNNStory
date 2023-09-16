@@ -1,3 +1,5 @@
+# NN Story Sketch
+generate sketch images for story 
 # Text-to-Image Sketch Generation
 **Text-to-Image Generation** is a task in computer vision and natural language processing where the goal is to generate an image that corresponds to a given textual description. This involves converting the text input into a meaningful representation, such as a feature vector, and then using this representation to generate an image that matches the description.
 # Stable Diffusion models
@@ -19,3 +21,6 @@ Follow these steps to get started with the Text-to-Image Sketch Generation proje
 - Python 3.7+
 - Required Python libraries (specified in `requirements.txt`)
 ### Installation
+
+# Sample Output
+![Alt Text](Sample Output/Screenshot 2023-09-16 155129.jpeg)
