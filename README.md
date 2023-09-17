@@ -1,5 +1,5 @@
 # Story Sketch
-generate sketch images form story 
+generate sketch images from story 
 # Text-to-Image Sketch Generation
 **Text-to-Image Generation** is a task in computer vision and natural language processing where the goal is to generate an image that corresponds to a given textual description. This involves converting the text input into a meaningful representation, such as a feature vector, and then using this representation to generate an image that matches the description.
 # Stable Diffusion models
